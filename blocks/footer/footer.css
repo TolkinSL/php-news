@@ -3,6 +3,8 @@
     padding-bottom: 16px;
     padding-left: 100px;
     border-top: 2px solid #61717a;
+    background: #3d4b53;
+    color: #c9c9c3;
 }
 
 @media screen and (max-width: 1023px) {
