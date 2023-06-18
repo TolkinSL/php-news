@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
     <link rel="stylesheet" href="./pages/index.css">
+    <script src="./components/validate.js" defer></script>
 </head>
 <body class="body">
 <?php $currentPage = 'contacts' ?>
@@ -22,6 +23,8 @@
 </header>
 <main class="main-contacts">
     <?php
+    require_once(__DIR__ . '/Dbase.php');
+    $feedback = Dbase::getFeedback();
     $name = $_POST['name'] ?? '';
     $adress = $_POST['adress'] ?? '';
     $phone = $_POST['phone'] ?? '';
@@ -38,28 +41,45 @@
         $res->execute();
         header('Location: ./contacts.php');
         die();
-    }?>
+    } ?>
 
     <section class="main-contacts__form">
         <h1 class="main-contacts__title">Обратная связь</h1>
         <form method="post" class="form-main" novalidate>
-            <input class="form-main__name" id="form-main__name" type="text" name="name"
+            <input class="form-main__input form-main__name" id="form-main__name" type="text" name="name"
                    placeholder="Фамилия Имя Отчество" required="required">
-            <span class="form-main__name-error">Введите ФИО</span>
-            <input class="form-main__adress" id="form-main__adress" type="text" name="adress"
-                   placeholder="Введите адрес" required="required">
-            <span class="form-main__name-error">Введите адрес</span>
-            <input class="form-main__phone" id="form-main__phone" type="text" name="phone"
+            <span class="form-main__name-error">Введите ФИО, русские буквы</span>
+            <input class="form-main__input form-main__adress" id="form-main__adress" type="text" name="adress"
+                   placeholder="Адрес" required="required">
+            <span class="form-main__adress-error">Введите адрес, русские буквы и цифры</span>
+            <input class="form-main__input form-main__phone" id="form-main__phone" type="text" name="phone"
                    placeholder="Контактный телефон" required="required">
-            <span class="form-main__name-error">Введите телефон</span>
-            <input class="form-main__email" id="form-main__email" type="email" name="email" placeholder="E-mail"
+            <span class="form-main__phone-error">Введите телефон, + или цифры</span>
+            <input class="form-main__input form-main__email" id="form-main__email" type="email" name="email"
+                   placeholder="E-mail"
                    required="required">
             <span class="form-main__email-error">Введите почту example@example.com</span>
-            <button class="form-button">Отправить</button>
+            <button class="form-main__button">Отправить заявку</button>
         </form>
     </section>
     <section class="main-contacts__db">
-        <p>Database record</p>
+        <h2 class="main-contacts__db-title">Список заявок</h2>
+        <table class="table-main">
+            <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>E-mail</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($feedback as $rowFeed) { ?>
+                <tr>
+                    <td><?= $rowFeed['name']; ?></td>
+                    <td><?= $rowFeed['email']; ?></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
     </section>
 </main>
 <footer class="footer">

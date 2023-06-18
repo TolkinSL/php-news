@@ -16,12 +16,20 @@
 }
 
 .main-contacts__form {
+    box-sizing: border-box;
+    padding: 32px 10px;
     position: relative;
     margin: 0 auto;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    /*padding-top: 32px;*/
+    /*padding-bottom: 32px;*/
     width: 400px;
     z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+    .main-contacts__form {
+        max-width: 375px;
+    }
 }
 
 .main-contacts__title {
@@ -32,11 +40,23 @@
 }
 
 .main-contacts__db {
+    box-sizing: border-box;
+    padding: 32px 10px;
     position: relative;
     margin: 0 auto;
-    padding-bottom: 32px;
     width: 400px;
     z-index: 1;
-    border-top: 2px solid #61717a;
+    border-top: 2px solid #c9c9c3;
     color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .main-contacts__db {
+        max-width: 375px;
+    }
+}
+
+.main-contacts__db-title {
+    margin: 0;
+    margin-bottom: 27px;
 }

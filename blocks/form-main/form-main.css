@@ -1,5 +1,66 @@
 .form-main {
-    width: 400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.form-main__input {
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 5px 10px;
+    width: 100%;
+    height: 60px;
+    font-size: 14px;
+    line-height: 120%;
+    font-weight: 400;
+    outline: none;
+}
+
+.form-main__input-error {
+    border: 2px solid #f13851;
+}
+
+.form-main__name-error {
+    visibility: hidden;
+    font-size: 14px;
+    color: #f13851;
+}
+
+.form-main__adress-error {
+    visibility: hidden;
+    font-size: 14px;
+    color: #f13851;
+}
+
+.form-main__phone-error {
+    visibility: hidden;
+    font-size: 14px;
+    color: #f13851;
+}
+
+.form-main__email-error {
+    visibility: hidden;
+    font-size: 14px;
+    color: #f13851;
+}
+
+.form-main__span-active {
+    visibility: visible;
+}
+
+.form-main__button {
+    margin-top: 10px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    height: 60px;
+    color: #fff;
+    background-color: rgb(186, 23, 53);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(186, 23, 53);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    text-transform: uppercase;
 }

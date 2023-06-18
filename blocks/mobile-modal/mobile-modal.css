@@ -1,0 +1,64 @@
+.mobile-modal {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*background: linear-gradient(135deg, rgb(190, 17, 22) 15%, rgb(110, 6, 9) 100%);*/
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mobile-modal_active {
+    visibility: visible;
+}
+.mobile-modal__open-button {
+    display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .mobile-modal__open-button {
+        margin-right: 8px;
+        display: block;
+    }
+}
+
+.mobile-modal__container {
+    position: relative;
+    width: 375px;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(190, 17, 22) 15%, rgb(110, 6, 9) 100%);
+}
+
+.mobile-modal__container-top {
+    height: 88px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #61717a;
+}
+
+.mobile-modal__close-button {
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../images/close-button.svg');
+    background-size: cover;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.mobile-modal__container-center {
+    box-sizing: border-box;
+    padding: 16px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-modal__container-center a {
+    margin-bottom: 16px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+}
