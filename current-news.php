@@ -9,31 +9,24 @@
     <script src="./components/modal-mobile.js" defer></script>
 </head>
 <body class="body">
-<?php $currentPage = 'news' ?>
+<?php $currentPage = 'current-news' ?>
 <div class="page">
     <?php
     require_once(__DIR__ . '/header.php');
     ?>
-    <main class="main">
+    <main class="main-current">
         <?php
         require_once(__DIR__ . '/Dbase.php');
-        $limitNews = 5;
-        $rowsNews = Dbase::getMainNews($limitNews);
+        $newsId = $_GET['id'] ?? 1;
+        $rowNews = Dbase::getNewsById($newsId);
+        //print_r($rowNews);
         ?>
-        <h1 class="main__title">Лента новостей</h1>
-        <section class="lenta-news">
-            <?php foreach ($rowsNews as $news) { ?>
-                <article class="top-news__item lenta-news_modificator">
-                    <p class="top-news__date"><?= $news['fdate']; ?></p>
-                    <div class="top-news__item-container">
-                        <a href="./current-news.php?id=<?= $news['id'] ?>" class="top-news__title"><?= $news['title']; ?></a>
-                        <p class="top-news__subtitle"><?= $news['announce']; ?></p>
-                    </div>
-                </article>
-            <?php } ?>
-        </section>
+        <p class="top-news__date"><?= $rowNews['fdate']; ?></p>
+        <h1 class="top-news__title"><?= $rowNews['title']; ?></h1>
+        <img class="top-news__image" src="./images-news/<?= $rowNews['image'] ?>" alt="<?= $rowNews['title'] ?>">
+        <p class="top-news__subtitle"><?= $rowNews['content']; ?></p>
         <ul class="main__links">
-            <li><a href="./index.php">Главная</a></li>
+            <li><a href="./news.php">Все новости</a></li>
             <li><a href="./contacts.php">Обратная связь</a></li>
         </ul>
     </main>

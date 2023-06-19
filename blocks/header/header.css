@@ -58,3 +58,13 @@
     line-height: 160%;
     color: #94090d;
 }
+
+.header__link:hover {
+    color: #333;
+    border-bottom: 3px solid #94090d;
+}
+
+.header__link-active {
+    color: #333;
+    border-bottom: 3px solid #94090d;
+}

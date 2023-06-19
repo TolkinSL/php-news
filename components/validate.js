@@ -71,7 +71,7 @@ const isValidAdress = (text) => {
     if (text.length > 70) {
         return false
     }
-    const regex = /^[а-яёЁ А-Я 0-9\-]+$/i;
+    const regex = /^[а-яёЁ А-Я 0-9\.\-]+$/i;
     return regex.test(text);
 };
 
