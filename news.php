@@ -26,13 +26,13 @@
     <main class="main">
         <?php
         require_once(__DIR__ . '/Dbase.php');
-        $limitNews = 3;
+        $limitNews = 5;
         $rowsNews = Dbase::getMainNews($limitNews);
         ?>
-        <h1 class="main__title">Главные новости дня</h1>
-        <section class="top-news">
+        <h1 class="main__title">Лента новостей</h1>
+        <section class="lenta-news">
             <?php foreach ($rowsNews as $news) { ?>
-                <article class="top-news__item">
+                <article class="top-news__item lenta-news_modificator">
                     <p class="top-news__date"><?= $news['fdate']; ?></p>
                     <div class="top-news__item-container">
                         <a href="#" class="top-news__title"><?= $news['title']; ?></a>
