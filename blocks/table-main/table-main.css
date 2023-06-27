@@ -1,0 +1,16 @@
+.table-main {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-main th {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table-main td {
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

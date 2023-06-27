@@ -1,0 +1,62 @@
+.main-contacts {
+    position: relative;
+    background-image: url('../../images/form_fon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-contacts::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.main-contacts__form {
+    box-sizing: border-box;
+    padding: 32px 10px;
+    position: relative;
+    margin: 0 auto;
+    /*padding-top: 32px;*/
+    /*padding-bottom: 32px;*/
+    width: 400px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+    .main-contacts__form {
+        max-width: 375px;
+    }
+}
+
+.main-contacts__title {
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.main-contacts__db {
+    box-sizing: border-box;
+    padding: 32px 10px;
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    z-index: 1;
+    border-top: 2px solid #c9c9c3;
+    color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .main-contacts__db {
+        max-width: 375px;
+    }
+}
+
+.main-contacts__db-title {
+    margin: 0;
+    margin-bottom: 27px;
+}
